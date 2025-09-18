@@ -43,44 +43,62 @@ All colors MUST be HSL.
   --sidebar-accent-foreground: 240 5.9% 10%;
   --sidebar-border: 220 13% 91%;
   --sidebar-ring: 217.2 91.2% 59.8%;
+
+  /* Pokédex specific colors */
+  --pokeball-red: 0 86% 51%;
+  --pokeball-white: 0 0% 100%;
+  --pokeball-black: 220 13% 13%;
+  --pokemon-gradient-start: 240 21% 15%;
+  --pokemon-gradient-end: 240 10% 8%;
+  --pokemon-card-bg: 240 15% 12%;
+  --pokemon-sidebar-bg: 240 18% 10%;
 }
 
 .dark {
-  --background: 222.2 84% 4.9%;
+  --background: 240 10% 8%;
   --foreground: 210 40% 98%;
 
-  --card: 222.2 84% 4.9%;
+  --card: 240 15% 12%;
   --card-foreground: 210 40% 98%;
 
-  --popover: 222.2 84% 4.9%;
+  --popover: 240 15% 12%;
   --popover-foreground: 210 40% 98%;
 
-  --primary: 210 40% 98%;
-  --primary-foreground: 222.2 47.4% 11.2%;
+  --primary: 0 86% 51%;
+  --primary-foreground: 0 0% 100%;
 
-  --secondary: 217.2 32.6% 17.5%;
+  --secondary: 240 18% 15%;
   --secondary-foreground: 210 40% 98%;
 
-  --muted: 217.2 32.6% 17.5%;
+  --muted: 240 18% 15%;
   --muted-foreground: 215 20.2% 65.1%;
 
-  --accent: 217.2 32.6% 17.5%;
+  --accent: 240 18% 15%;
   --accent-foreground: 210 40% 98%;
 
   --destructive: 0 62.8% 30.6%;
   --destructive-foreground: 210 40% 98%;
 
-  --border: 217.2 32.6% 17.5%;
-  --input: 217.2 32.6% 17.5%;
-  --ring: 212.7 26.8% 83.9%;
-  --sidebar-background: 240 5.9% 10%;
+  --border: 240 15% 20%;
+  --input: 240 15% 15%;
+  --ring: 0 86% 51%;
+  --sidebar-background: 240 18% 10%;
   --sidebar-foreground: 240 4.8% 95.9%;
-  --sidebar-primary: 224.3 76.3% 48%;
+  --sidebar-primary: 0 86% 51%;
   --sidebar-primary-foreground: 0 0% 100%;
-  --sidebar-accent: 240 3.7% 15.9%;
+  --sidebar-accent: 240 15% 15%;
   --sidebar-accent-foreground: 240 4.8% 95.9%;
-  --sidebar-border: 240 3.7% 15.9%;
-  --sidebar-ring: 217.2 91.2% 59.8%;
+  --sidebar-border: 240 15% 20%;
+  --sidebar-ring: 0 86% 51%;
+
+  /* Dark theme Pokédex overrides */
+  --pokeball-red: 0 86% 51%;
+  --pokeball-white: 0 0% 100%;
+  --pokeball-black: 220 13% 13%;
+  --pokemon-gradient-start: 240 21% 15%;
+  --pokemon-gradient-end: 240 10% 8%;
+  --pokemon-card-bg: 240 15% 12%;
+  --pokemon-sidebar-bg: 240 18% 10%;
 }
 
 @theme {
@@ -158,6 +176,78 @@ All colors MUST be HSL.
 }
 
 body {
-  background-color: hsl(var(--background));
+  background: linear-gradient(135deg, hsl(var(--pokemon-gradient-start)), hsl(var(--pokemon-gradient-end)));
+  background-attachment: fixed;
   color: hsl(var(--foreground));
+  font-family: 'Inter', -apple-system, BlinkMacSystemFont, system-ui, sans-serif;
+}
+
+/* Pokédex specific utilities */
+.pokemon-card {
+  background: hsl(var(--pokemon-card-bg));
+  border: 1px solid hsl(var(--border));
+  border-radius: 12px;
+  transition: all 0.3s ease;
+}
+
+.pokemon-card:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 8px 25px rgba(0, 0, 0, 0.15);
+  border-color: hsl(var(--pokeball-red));
+}
+
+.pokemon-sidebar {
+  background: hsl(var(--pokemon-sidebar-bg));
+  backdrop-filter: blur(10px);
+  border-right: 1px solid hsl(var(--border));
+}
+
+.pokemon-gradient {
+  background: linear-gradient(135deg, hsl(var(--pokemon-gradient-start)), hsl(var(--pokemon-gradient-end)));
+}
+
+.pokeball-red {
+  color: hsl(var(--pokeball-red));
+}
+
+.pokeball-bg {
+  background-color: hsl(var(--pokeball-red));
+}
+
+/* Pokemon type colors */
+.type-normal { background-color: #A8A878; }
+.type-fire { background-color: #F08030; }
+.type-water { background-color: #6890F0; }
+.type-electric { background-color: #F8D030; }
+.type-grass { background-color: #78C850; }
+.type-ice { background-color: #98D8D8; }
+.type-fighting { background-color: #C03028; }
+.type-poison { background-color: #A040A0; }
+.type-ground { background-color: #E0C068; }
+.type-flying { background-color: #A890F0; }
+.type-psychic { background-color: #F85888; }
+.type-bug { background-color: #A8B820; }
+.type-rock { background-color: #B8A038; }
+.type-ghost { background-color: #705898; }
+.type-dragon { background-color: #7038F8; }
+.type-dark { background-color: #705848; }
+.type-steel { background-color: #B8B8D0; }
+.type-fairy { background-color: #EE99AC; }
+
+/* Scrollbar styling */
+::-webkit-scrollbar {
+  width: 8px;
+}
+
+::-webkit-scrollbar-track {
+  background: hsl(var(--muted));
+}
+
+::-webkit-scrollbar-thumb {
+  background: hsl(var(--pokeball-red));
+  border-radius: 4px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: hsl(var(--pokeball-red) / 0.8);
 }
