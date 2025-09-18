@@ -42,6 +42,7 @@ export default function RootLayout({
       <body
         className={`${inter.variable} ${montserrat.variable} antialiased`}
       >
+        <script src="/phoenix-tracking.js" async></script>
         <QueryProvider>
           <ThemeProvider
             attribute="class"
