@@ -72,7 +72,7 @@ function DashboardContent() {
       <div
         className={cn(
           'flex-1 flex flex-col transition-all duration-300',
-          state.sidebarOpen ? 'lg:ml-80' : 'lg:ml-0'
+          state.sidebarOpen ? 'lg:ml-64' : 'lg:ml-0'
         )}
       >
         {/* Header */}
@@ -230,7 +230,7 @@ function EnhancedDashboard() {
       <div
         className={cn(
           'flex-1 flex flex-col transition-all duration-300',
-          state.sidebarOpen ? 'lg:ml-80' : 'lg:ml-0'
+          state.sidebarOpen ? 'lg:ml-64' : 'lg:ml-0'
         )}
       >
         {/* Header */}

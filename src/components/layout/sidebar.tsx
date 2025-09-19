@@ -76,7 +76,7 @@ export function Sidebar({ className }: SidebarProps) {
       {/* Sidebar */}
       <aside
         className={cn(
-          'pokemon-sidebar fixed left-0 top-0 h-full w-80 z-50 transition-transform duration-300 lg:relative lg:translate-x-0',
+          'pokemon-sidebar fixed left-0 top-0 h-full w-64 z-50 transition-transform duration-300 lg:relative lg:translate-x-0',
           state.sidebarOpen ? 'translate-x-0' : '-translate-x-full',
           className
         )}
