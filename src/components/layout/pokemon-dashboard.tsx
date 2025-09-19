@@ -72,14 +72,14 @@ function DashboardContent() {
       <div
         className={cn(
           'flex-1 flex flex-col transition-all duration-300',
-          state.sidebarOpen ? 'lg:ml-64' : 'lg:ml-0'
+          state.sidebarOpen ? 'lg:ml-60' : 'lg:ml-0'
         )}
       >
         {/* Header */}
         <Header />
 
         {/* Main Content Area */}
-        <main className="flex-1 container mx-auto px-4 py-6 space-y-8">
+        <main className="flex-1 container mx-auto px-2 py-6 space-y-8">
           {/* Featured Pokemon Section */}
           {featuredPokemon && !featuredLoading && (
             <section className="space-y-4">
@@ -230,14 +230,14 @@ function EnhancedDashboard() {
       <div
         className={cn(
           'flex-1 flex flex-col transition-all duration-300',
-          state.sidebarOpen ? 'lg:ml-64' : 'lg:ml-0'
+          state.sidebarOpen ? 'lg:ml-60' : 'lg:ml-0'
         )}
       >
         {/* Header */}
         <Header />
 
         {/* Main Content Area */}
-        <main className="flex-1 container mx-auto px-4 py-6 space-y-8">
+        <main className="flex-1 container mx-auto px-2 py-6 space-y-8">
           {/* Featured Pokemon Section */}
           {featuredPokemon && (
             <section className="space-y-4">
